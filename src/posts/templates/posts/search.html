@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Blog</title>
+    <style>
+        .title{
+            text-align: center;
+        }
+
+        .search-container {
+            display: flex;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        /* Search input style */
+        .search-input {
+            flex: 1;
+            padding: 8px;
+            border: 1px solid #ced4da;
+            border-radius: 0.25rem;
+            outline: none;
+            font-size: 16px;
+        }
+
+        /* Search button style */
+        .search-button {
+            padding: 8px 12px;
+            background-color: #007bff;
+            border: 1px solid #007bff;
+            border-radius: 0 0.25rem 0.25rem 0;
+            color: #fff;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        /* Button hover effect */
+        .search-button:hover {
+            background-color: #0056b3;
+            border: 1px solid #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="title">
+            Blog Search
+        </h1>
+        <form action="{% url 'watson:search' %}">
+            <div class="search-container">
+                <input type="text" class="search-input" name="q" value="{{request.GET.q}}">
+                <button class="search-button">Search</button>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
